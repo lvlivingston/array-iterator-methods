@@ -99,7 +99,55 @@
 
 // findIndex method******
 
+//if car newer than 2015
+// const indexNewerThan2015 = cars.findIndex((car) => car.year > 2015);
+// console.log(indexNewerThan2015);
 
+//if newer than 2020
+// const indexNewerThan2020 = cars.findIndex((car) => car.year > 2020);
+// console.log(indexNewerThan2020);
 
+// some method******
+//if anything yes, return true. if not, return false
 
+// is there a ford in the array?
+// const includesFord = cars.some((car) => car.make === 'Ford');
+// console.log(includesFord);
 
+// is there an evil monkey in my room?
+// const myRoom = ['evil monkey', 'bed', 'lamp'];
+// const includesEvilMonkey = myRoom.some((evil) => evil === 'evil monkey');
+// console.log(includesEvilMonkey);
+
+// every method******
+// are all the items in the array x?
+
+// const allNewerThan2000 = cars.every((car) => car.year > 2000);
+// console.log(allNewerThan2000);
+
+// reduce method******
+// will take single array and reduce down to a single object/value
+
+// const nums = [25, 6, 100, 3];
+
+//classic function
+// const sum = nums.reduce((acc, num) => {
+//     console.log(acc, num);
+//     return acc + num;
+// });
+// console.log(sum);
+
+//arrow function
+// const sum = nums.reduce((acc, num) => acc + num, 0);
+// console.log(sum);
+
+//counts votes
+const votes = ['Yes', 'No', 'No', 'Yes', 'Yes'];
+const tally = votes.reduce((runningTally, vote) => {
+    // assign a 1 if first time seeing a certain "type" of vote
+    // otherwise, increase vote count by 1
+    runningTally[vote] = runningTally[vote] ? runningTally[vote] + 1 : 1;
+    return runningTally;
+}, {});
+console.log(votes);
+console.log(tally);
